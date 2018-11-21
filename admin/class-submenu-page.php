@@ -21,6 +21,6 @@ class Submenu_Page {
 	 * Submenu class.
 	 */
 	public function render() {
-		echo 'This is the basic submenu page.';
+		include_once( 'views/settings.php' );
 	}
 }
