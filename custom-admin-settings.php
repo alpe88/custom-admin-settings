@@ -37,8 +37,17 @@ add_action( 'plugins_loaded', 'tutsplus_custom_admin_settings' );
  * @since 1.0.0
  */
 function tutsplus_custom_admin_settings() {
-
-	$plugin = new Submenu( new Submenu_Page() );
-	$plugin->init();
+ 
+    $serializer = new Serializer();
+    $serializer->init();
+    
+	$deserializer = new Deserializer();
+	
+    $plugin = new Submenu( new Submenu_Page( $serializer ) );
+    $plugin->init();
+	
+	// Setup the public facing functionality.
+    $public = new Content_Messenger( $deserializer );
+    $public->init();
 
 }

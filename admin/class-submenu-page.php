@@ -23,4 +23,8 @@ class Submenu_Page {
 	public function render() {
 		include_once( 'views/settings.php' );
 	}
+	
+	public function __construct( $deserializer ) {
+        $this->deserializer = $deserializer;
+    }
 }

@@ -9,10 +9,12 @@
  
             <div class="options">
                 <p>
-                    <label>What message would you like to display above each post?</label>
-                    <br />
-                    <input type="text" name="acme-message" value="" />
-                </p>
+					<label>What message would you like to display above each post?</label>
+					<br />
+					<input type="text" name="acme-message"
+					value="<?php echo esc_attr( $this->deserializer->get_value( 'tutsplus-custom-data' ) ); ?>"
+					/>
+				</p>
         </div><!-- #universal-message-container -->
  
         <?php
